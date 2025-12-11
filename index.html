@@ -1,0 +1,1302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.12/js/intlTelInput.js'></script>
+  <link href='https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.12/css/intlTelInput.css' rel='stylesheet' />
+  <!-- <script src='https://unpkg.com/libphonenumber-js@1.10.54/bundle/libphonenumber-mobile.js'></script> -->
+  <script src='https://unpkg.com/libphonenumber-js@1.12.6/bundle/libphonenumber-mobile.js'></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>
+    A New AI-Powered Tool for High-Profit Investing Has Just Launched -
+    DailyTip
+  </title>
+  <link rel="stylesheet" href="style.css" />
+
+  <link href="css2.css" rel="stylesheet" />
+
+  <style>
+    /* Header Styles */
+    :root {
+      /* Color system */
+      --primary: #e13c3c;
+      --primary-dark: #c53333;
+      --primary-light: #e85c5c;
+      --secondary: #181818;
+      --secondary-light: #2c2c2c;
+      --neutral-100: #f5f5f7;
+      --neutral-200: #e5e5e5;
+      --neutral-300: #d1d1d6;
+      --neutral-400: #86868b;
+      --neutral-500: #6e6e73;
+      --neutral-600: #3d3d3d;
+      --white: #ffffff;
+
+      /* Spacing system (multiples of 8) */
+      --space-1: 0.5rem;
+      /* 8px */
+      --space-2: 1rem;
+      /* 16px */
+      --space-3: 1.5rem;
+      /* 24px */
+      --space-4: 2rem;
+      /* 32px */
+      --space-5: 2.5rem;
+      /* 40px */
+      --space-6: 3rem;
+      /* 48px */
+
+      /* Other variables */
+      --header-height: 4.5rem;
+      --header-bg: rgba(255, 255, 255, 0.95);
+      --header-bg-scrolled: rgba(255, 255, 255, 0.98);
+      --shadow: 0 1px 10px rgba(0, 0, 0, 0.05);
+      --transition: 0.3s ease;
+      --border-radius: 0.5rem;
+    }
+
+    /* Main header styles */
+    .site-header {
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: var(--header-height);
+      background-color: var(--header-bg);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      z-index: 1000;
+      transition: background-color var(--transition),
+        box-shadow var(--transition);
+    }
+
+    .site-header.scrolled {
+      background-color: var(--header-bg-scrolled);
+      box-shadow: var(--shadow);
+    }
+
+    .header-container {
+      max-width: 1200px;
+      height: 100%;
+      margin: 0 auto;
+      padding: 0 var(--space-2);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* Logo styles */
+    .logo-container {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--secondary);
+      letter-spacing: -0.02em;
+    }
+
+    .logo-dot {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      background-color: var(--primary);
+      border-radius: 50%;
+      margin-right: 0.25rem;
+    }
+
+    .logo-text {
+      transform: translateY(1px);
+    }
+
+    /* Navigation styles */
+    .main-nav {
+      display: none;
+    }
+
+    .nav-list {
+      display: flex;
+      gap: var(--space-3);
+    }
+
+    .nav-item {
+      position: relative;
+    }
+
+    .nav-link {
+      color: var(--secondary);
+      font-size: 1rem;
+      font-weight: 500;
+      padding: var(--space-1) 0;
+      transition: color var(--transition);
+    }
+
+    .nav-link:hover {
+      color: var(--primary);
+    }
+
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: var(--primary);
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.3s ease;
+    }
+
+    .nav-link:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    /* CTA button styles */
+    .cta-container {
+      display: none;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background-color: #0154c5;
+      color: var(--white);
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 0.7rem 1.2rem;
+      border-radius: var(--border-radius);
+      transition: background-color var(--transition),
+        transform var(--transition);
+    }
+
+    .cta-button:hover {
+      background-color: #0154c5;
+      transform: translateY(-1px);
+    }
+
+    .cta-button:active {
+      transform: translateY(0);
+    }
+
+    /* Mobile menu toggle */
+    .mobile-menu-toggle {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 30px;
+      height: 20px;
+      cursor: pointer;
+      background-color: #fff;
+      z-index: 1001;
+      border: 1px #fff;
+    }
+
+    .bar {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: var(--secondary);
+      transition: var(--transition);
+    }
+
+    .mobile-menu-toggle.active .bar:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+
+    .mobile-menu-toggle.active .bar:nth-child(2) {
+      opacity: 0;
+    }
+
+    .mobile-menu-toggle.active .bar:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* Mobile menu */
+    .mobile-menu {
+      position: fixed;
+      top: var(--header-height);
+      left: 0;
+      width: 100%;
+      height: 0;
+      background-color: var(--white);
+      overflow: hidden;
+      transition: height var(--transition);
+      z-index: 999;
+      box-shadow: 0 10px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .mobile-menu.active {
+      height: calc(100vh - var(--header-height));
+      overflow-y: auto;
+    }
+
+    .mobile-nav-list {
+      padding: var(--space-3) var(--space-2);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+    }
+
+    .mobile-nav-link {
+      display: block;
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: var(--secondary);
+      padding: var(--space-1) 0;
+      transition: color var(--transition);
+    }
+
+    .mobile-nav-link:active {
+      color: var(--primary);
+    }
+
+    .mobile-nav-cta {
+      margin-top: var(--space-2);
+    }
+
+    .mobile-cta-button {
+      display: inline-block;
+      background-color: var(--primary);
+      color: var(--white);
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 0.8rem 1.5rem;
+      border-radius: var(--border-radius);
+      transition: background-color var(--transition);
+    }
+
+    .mobile-cta-button:active {
+      background-color: var(--primary-dark);
+    }
+
+    /* Media Queries */
+    @media (min-width: 768px) {
+      .main-nav {
+        display: block;
+      }
+
+      .cta-container {
+        display: block;
+      }
+
+      .mobile-menu-toggle {
+        display: none;
+      }
+
+      .mobile-menu {
+        display: none;
+      }
+    }
+
+    @media (min-width: 992px) {
+      .header-container {
+        padding: 0 var(--space-4);
+      }
+
+      .nav-list {
+        gap: var(--space-4);
+      }
+
+      .nav-link {
+        font-size: 1.1rem;
+      }
+
+      .cta-button {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .header-container {
+        padding: 0 var(--space-2);
+      }
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    #signupForm {
+      scroll-behavior: smooth;
+    }
+
+    .form-container {
+      width: 100%;
+      max-width: 550px;
+      margin: 0 auto;
+      box-shadow: 0px 1px 10px 1px #ebebeb !important;
+      padding-bottom: 10px;
+    }
+
+    .form-header {
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-risk-disclaimer {
+      text-align: center;
+      font-size: 11px;
+      color: #777;
+      padding: 10px;
+      background: #f8f8f8;
+    }
+
+    .footer-risk-disclaimer a {
+      color: #555;
+      text-decoration: underline;
+    }
+
+    .form-header h1 {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #000;
+      line-height: 1.3;
+    }
+
+    .signup-form {
+      background: white;
+      border-radius: 14px;
+      padding: 1rem;
+    }
+
+    .input-group {
+      position: relative;
+      margin-bottom: 1rem;
+      display: flex !important;
+      margin-right: 15px;
+      margin-left: 15px;
+    }
+
+    .input-field {
+      width: 100%;
+      padding: 1rem;
+      font-size: 1rem;
+      border: none;
+      background: #f0f0f0;
+      border-radius: 5px;
+      transition: background 0.2s;
+    }
+
+    .input-field:focus {
+      outline: none;
+      background: #e8e8e8;
+    }
+
+    .phone-group {
+      display: flex;
+      gap: 0.5rem;
+      margin-right: 15px;
+      margin-left: 15px;
+    }
+
+    .country-select-container {
+      position: relative;
+    }
+
+    .selected-country {
+      display: flex;
+      align-items: center;
+      padding: 1rem;
+      background: #f0f0f0;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      height: 100%;
+    }
+
+    .country-dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 300px;
+      max-height: 300px;
+      background: white;
+      border-radius: 5px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      z-index: 100;
+      overflow: hidden;
+    }
+
+    .country-dropdown.show {
+      display: block;
+    }
+
+    .search-container {
+      padding: 10px;
+      border-bottom: 1px solid #eee;
+    }
+
+    #countrySearch {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    .country-list {
+      max-height: 250px;
+      overflow-y: auto;
+    }
+
+    .country-item {
+      display: flex;
+      align-items: center;
+      padding: 10px 15px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .country-item:hover {
+      background: #f5f5f5;
+    }
+
+    .country-flag {
+      margin-right: 10px;
+      font-size: 1.2rem;
+      margin-bottom: -5px;
+    }
+
+    .cta-section {
+      background: linear-gradient(135deg, #46a24e 0%, #35841e 100%);
+      padding: 2rem 0rem;
+      text-align: center;
+      color: white;
+    }
+
+    .cta-section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .cta-section p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .country-name {
+      flex: 1;
+      text-align: left;
+      font-size: 14px;
+    }
+
+    .country-dial {
+      color: #666;
+      font-size: 14px;
+    }
+
+    .phone-input {
+      flex: 1;
+      padding: 1rem;
+      font-size: 1rem;
+      border: none;
+      background: #f0f0f0;
+      border-radius: 5px;
+    }
+
+    .phone-input:focus {
+      outline: none;
+      background: #e8e8e8;
+    }
+
+    .submit-button {
+      width: 100%;
+      padding: 1rem;
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: white;
+      background: #119b04;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: opacity 0.2s;
+      margin-top: 0.5rem;
+    }
+
+    .submit-button:hover {
+      opacity: 0.9;
+    }
+
+    .terms {
+      margin-top: 1rem;
+      font-size: 0.8rem;
+      color: #666;
+      text-align: center;
+      margin-right: 15px;
+      margin-left: 15px;
+    }
+
+    .terms a {
+      color: #000;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .terms a:hover {
+      text-decoration: underline;
+    }
+
+    .preloader {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 9999;
+    }
+
+    .preloader-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .spinner {
+      width: 40px;
+      height: 40px;
+      border: 4px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      border-top: 4px solid white;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* Responsive styles */
+    @media (max-width: 480px) {
+      .signup-form {
+        padding: 0.2rem;
+      }
+
+      .form-header h1 {
+        font-size: 1.4rem;
+      }
+
+      .country-dropdown {
+        width: 250px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Top Header -->
+  <div class="top-header">
+    <div class="container">
+      <div class="social-icons">
+        <a href="#signupForm" style="font-size: 13px; color: #cbcbcbc2" class="social-icon">Advertorial</a>
+      </div>
+      <div class="auth-links">
+        <a href="#signupForm" class="login-link">Login</a>
+        <a href="#signupForm" class="signup-link">Sign Up ▸</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Header -->
+  <header class="main-header">
+    <div class="container">
+      <a class="logo" href="#signupForm">
+        <img src="logoo.png" width="520" height="155" style="max-width: 150px; height: 100%" alt="dailytip.net Logo"
+          class="fusion-standard-logo" data-logo-height="77.5" data-logo-width="260" />
+      </a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="container">
+      <h1 class="article-title">
+        A New AI-Powered Tool for High-Profit Investing Has Just Launched
+      </h1>
+      <div class="content-grid">
+        <!-- Article Content -->
+        <article class="article-content">
+          <div class="article-meta">
+            <span class="author-info">By <a href="#" class="author-link">roy</a></span>
+            <span class="meta-divider">|</span>
+            <span class="publish-date">April 8, 2024</span>
+            <span class="meta-divider">|</span>
+            <a href="#signupForm" class="category-link">AI Investing</a>
+            <span class="meta-divider">|</span>
+            <a href="#signupForm" class="comments-link">43 Comments</a>
+          </div>
+
+          <div class="article-hero">
+            <div class="hero-image-container">
+              <img src="robotnoqueen.jpg" alt="AI Trading Technology" class="hero-image" />
+            </div>
+          </div>
+
+          <div class="article-body">
+            <p>
+              A next-generation
+              <a href="#signupForm" class="track-outbrain" data-target="#beforeForm" id="txt_click_investment_platform"
+                style="cursor: pointer">investment platform</a>
+              combining artificial intelligence with trading strategies across
+              options, futures, stocks, and more has officially entered the
+              market. With an emphasis on education, in-depth analytics, and
+              self-directed investing, it’s designed to help individuals build
+              online income with ease.
+            </p>
+
+            <p>
+              Breakthrough AI technologies like ChatGPT, Bard, DALL·E, and
+              Elon Musk’s xAI are transforming global industries. While it may
+              feel like science fiction, AI’s evolution spans decades—and only
+              now are developers unlocking its full potential in finance. With
+              Creation Wealth Capital, users can tap into this innovation
+              24/7, even while they sleep. Automation on the platform—via
+              third-party tools like
+              <a href="#signupForm" class="track-outbrain" data-target="#beforeForm" id="txt_click_AgenticAI"
+                style="cursor: pointer">AgenticAI</a>
+              and
+              <a href="#signupForm" class="track-outbrain" data-target="#beforeForm" id="txt_click_GenerativeAI"
+                style="cursor: pointer">GenerativeAI</a>
+              guided by user-defined rules, giving individuals full control
+              over their strategy.
+            </p>
+
+            <div class="article-image">
+              <img src="12.jpg" alt="Financial Executive" class="content-image" />
+            </div>
+
+            <h2 class="section-title">
+              Why Creation Wealth Capital Is Gaining Traction
+            </h2>
+            <p>
+              <a href="#signupForm" class="track-outbrain" data-target="#beforeForm" id="txt_click_the_platform"
+                style="cursor: pointer">The platform</a>
+              distinguishes itself through a streamlined, results-driven
+              experience that combines real-time data with intuitive design.
+              Here are the top three advantages:
+            </p>
+            <p><b>1. Seamless Experience</b></p>
+            <p>
+              <a href="#signupForm" class="track-outbrain" data-target="#beforeForm" id="txt_click_the_platform"
+                style="cursor: pointer">The platform</a>
+              simplifies trading to its core. Whether you’re a beginner or a
+              seasoned investor, the interface is built to help you focus on
+              building strategies—not battling with outdated dashboards or
+              technical barriers.
+            </p>
+            <p><b>2. Beginner-Friendly Interface </b></p>
+            <p>
+              No coding or technical know-how is required.
+              <a href="#signupForm" class="track-outbrain" data-target="#beforeForm" id="txt_click_the_system"
+                style="cursor: pointer">The system</a>
+              automatically highlights the most promising assets—including
+              stocks, cryptocurrencies, and ETFs—so users can make informed
+              decisions without the guesswork.
+            </p>
+            <p><b>3. Fast &amp; Flexible Withdrawals </b></p>
+            <p>
+              Payouts are processed in under 48 hours and support a wide
+              variety of payment options, from digital wallets and debit cards
+              to direct bank transfers.
+            </p>
+
+            <h2 class="section-title">How it works?</h2>
+
+            <p>
+              To begin, users make a small deposit. From there, a personal
+              account manager reaches out to assist with trade execution
+              across stocks, crypto, or bonds—aimed at maximizing profits with
+              minimal effort.
+            </p>
+
+            <p>
+              <a href="#signupForm" class="track-outbrain" data-target="#beforeForm" id="txt_click_the_platform"
+                style="cursor: pointer">The platform’s</a>
+              powerful algorithm analyzes everything from macroeconomic trends
+              to technical indicators, delivering precise trading
+              recommendations at lightning speed.
+            </p>
+
+            <p>
+              What powers
+              <a href="#signupForm" class="track-outbrain" data-target="#beforeForm"
+                id="txt_click_Creation_Wealth_Capital" style="cursor: pointer">Creation Wealth Capital</a>
+              is the same kind of AI that enables autonomous Tesla
+              driving—processing millions of data points every minute to time
+              trades with near-perfect accuracy, reducing risks while
+              increasing profitability.
+            </p>
+            <div class="article-image">
+              <img src="13.jpeg" alt="Morgan Stanley Building" class="content-image" />
+            </div>
+
+            <div class="info-box">
+              <p>
+                <b>You can start with just a $250 investment</b>, and your
+                dedicated account manager will guide you step-by-step from the
+                beginning.
+              </p>
+
+              <p>
+                No prior experience is needed—everything is explained clearly
+                and tailored to your pace. The platform is flexible, so you
+                choose how much time you want to commit, whether it's a few
+                hours or a full schedule. It’s a low-risk, high-potential way
+                to explore online income with the support of advanced AI
+                technology.
+              </p>
+            </div>
+
+            <div id="form-wrapper" class="form-signup-wrapper signup-form-wrapper" style="place-content: center">
+              <div class="signup-form">
+                <form id="signupForm" class="signupForm form-container">
+
+                  <input type='hidden' name='phone' value=''>
+                  <input type='hidden' name='questions' value='{}'>
+                  <input type='hidden' name='funnel_vertical' value=''>
+                  <input type='hidden' name='funnel_land' value=''>
+                  <input type='hidden' name='funnel_name' value=''>
+                  <input type='hidden' name='form_token' value=''>
+                  <style>
+                    .iti {
+                      width: 100%;
+                    }
+                  </style>
+
+                  <div class="preloader">
+                    <div class="preloader-content">
+                      <div class="spinner"></div>
+                    </div>
+                  </div>
+                  <h3 style="
+                        font-size: 1.6rem;
+                        margin-bottom: 15px;
+                        font-family: var(--font-secondary);
+                        /* font-style: normal; */
+                        /* font-weight: 700; */
+                        /* font-size: 1.28rem; */
+                        /* line-height: 1.8; */
+                        margin: 0 0 2rem 0;
+                        color: #fff;
+                        padding: 15px;
+                        text-align: center;
+                        background-color: #0054c5;
+                        /* text-transform: uppercase; */
+                        border-radius: 5px 5px 0px 0px;
+                      ">
+                    Sign up to harness the power of AI Today
+                  </h3>
+                  <div class="input-group">
+                    <input type="text" id="first_name" name="first_name" class="input-field" placeholder="First Name"
+                      required="" value="" />
+                  </div>
+
+                  <div class="input-group">
+                    <input type="text" id="last_name" name="last_name" class="input-field" placeholder="Last Name"
+                      required="" value="" />
+                  </div>
+
+                  <div class="input-group">
+                    <input type="email" id="email" name="email" class="input-field" placeholder="Email" required=""
+                      value="" />
+                  </div>
+
+                  <div class="input-group">
+                    <input type="tel" id="phone" name="tel_input" class="input-field" placeholder="Phone" required=""
+                      value="" />
+                  </div>
+
+
+                  <div style="margin-right: 15px; margin-left: 15px">
+                    <button type="submit" class="submit-button">
+                      Sign up now →
+                    </button>
+                  </div>
+
+                  <p class="terms">
+                    Signing up means you agree to our
+                    <a href="#signupForm" class="terms-link">Terms &amp; Conditions</a>
+                    and acknowledge our
+                    <a href="#signupForm" class="privacy-link">Privacy Policy</a>.
+                  </p>
+                </form>
+              </div>
+            </div>
+
+            <h3 class="section-subtitle">As Easy As 1.2.3</h3>
+
+            <div class="process-section">
+              <div class="process-step">
+                <h4 class="process-title">SIGN UP PROCESS</h4>
+                <h3 class="step-title">HOW TO JOIN THE PLATFORM</h3>
+                <p>
+                  To begin, complete the registration form by providing your
+                  details, including your name, email, and phone number. After
+                  submitting this information, a personal manager will contact
+                  you to proceed further.
+                </p>
+              </div>
+              <div class="process-image">
+                <img src="1.jpg" alt="Registration Form" class="step-image" />
+              </div>
+            </div>
+
+            <div class="process-section">
+              <div class="process-step">
+                <h4 class="process-title">PROCESS OF ADDING FUNDS</h4>
+                <h3 class="step-title">ACCOUNT VERIFICATION NECESSITY</h3>
+                <p>
+                  Next, you must finalize the verification of your account.
+                  This will be conducted by an authorized representative, who
+                  will provide a concise explanation of the entire process.
+                </p>
+              </div>
+              <div class="process-image">
+                <img src="2.jpg" alt="Account Verification" class="step-image" />
+              </div>
+            </div>
+
+            <div class="process-section">
+              <div class="process-step">
+                <h4 class="process-title">INTRODUCTION TO THE PLATFORM</h4>
+                <h3 class="step-title">
+                  INITIAL INVESTMENT REQUIREMENT: $250
+                </h3>
+                <p>
+                  Upon joining, your first step is to invest a minimum of
+                  $250, officially marking your entry into the platform. With
+                  this investment, you can begin trading based on the guidance
+                  provided to you.
+                </p>
+              </div>
+              <div class="process-image">
+                <img src="3.jpg" alt="Investment Process" class="step-image" />
+              </div>
+            </div>
+
+            <div class="final-cta">
+              <a href="#signupForm" class="track-outbrain" data-target="#beforeForm" id="txt_click_click_to_start"
+                style="cursor: pointer">CLICK TO START</a>
+            </div>
+
+            <!-- Comments Section -->
+            <div class="comments-section">
+              <h3 class="comments-title">Comments (43)</h3>
+
+              <div class="comment-form">
+                <h4 class="form-title">Leave a Comment</h4>
+                <form class="comment-form-container">
+                  <div class="form-row">
+                    <input type="text" placeholder="Your Name" class="form-input" required="" value="" />
+                    <input type="email" placeholder="Your Email" class="form-input" required="" value="" />
+                  </div>
+                  <textarea placeholder="Your Comment" class="form-textarea" rows="4" required=""></textarea>
+                  <button type="submit" class="submit-comment-btn">
+                    Post Comment
+                  </button>
+                </form>
+              </div>
+
+              <div class="comments-list">
+                <div class="comment">
+                  <div class="comment-avatar">
+                    <img src="pexels-photo-2379004.jpeg" alt="Michael Chen" class="avatar-image" />
+                  </div>
+                  <div class="comment-content">
+                    <div class="comment-header">
+                      <h5 class="comment-author">Michael Chen</h5>
+                      <span class="comment-date">Yesterday</span>
+                    </div>
+                    <p class="comment-text">
+                      I was on the waitlist for ages and finally got an
+                      account. I wish I new about the direct signup link from
+                      this page that skips the waitlist. Anyways, I know
+                      others won't believe me, but I don't care.The only
+                      difference from hundreds of other software is that this
+                      one has much better technology to predict price changes,
+                      so it is really effective and you can make a profit.
+                    </p>
+                    <div class="comment-actions">
+                      <button class="reply-btn">Reply</button>
+                      <button class="like-btn">👍 12</button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="comment">
+                  <div class="comment-avatar">
+                    <img src="pexels-photo-1239291.jpeg" alt="Sarah Rodriguez" class="avatar-image" />
+                  </div>
+                  <div class="comment-content">
+                    <div class="comment-header">
+                      <h5 class="comment-author">Sarah Rodriguez</h5>
+                      <span class="comment-date">3 Days ago</span>
+                    </div>
+                    <p class="comment-text">
+                      Yes it works, just like many systems do, but
+                      unfortunately the rich keep it for themselves. This one
+                      was opened for public registration for short time, but I
+                      didn't manage to register. I tried opening a signup
+                      page, but it says its at a capacity. When will it be
+                      available again?
+                    </p>
+                    <div class="comment-actions">
+                      <button class="reply-btn">Reply</button>
+                      <button class="like-btn">👍 28</button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="comment">
+                  <div class="comment-avatar">
+                    <img src="pexels-photo-1222271.jpeg" alt="David Thompson" class="avatar-image" />
+                  </div>
+                  <div class="comment-content">
+                    <div class="comment-header">
+                      <h5 class="comment-author">David Thompson</h5>
+                      <span class="comment-date">3 Days ago</span>
+                    </div>
+                    <p class="comment-text">
+                      I managed to register : At first I thought I didn't want
+                      to share this with others, but then you realize that you
+                      don't lose anything if more people use it. Everyone can
+                      make money. I started to make about $750 of profit a day
+                      since 5 days ago when I first started. You have to be
+                      lucky to get an account, but from what I see now, this
+                      direct signup link still works.
+                    </p>
+                    <div class="comment-actions">
+                      <button class="reply-btn">Reply</button>
+                      <button class="like-btn">👍 15</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="comment">
+                  <div class="comment-avatar">
+                    <div id="w-node-f1148a3a-8c9e-30d0-ccfd-7bba48324b49-9ec1ba67" style="
+                          display: flex;
+                          width: 45px;
+                          height: 45px;
+                          justify-content: center;
+                          align-items: center;
+                          background-color: #0368a6;
+                        " class="name-tag">
+                      <div class="text-block-3" style="color: white; font: bold">
+                        JS
+                      </div>
+                    </div>
+                  </div>
+                  <div class="comment-content">
+                    <div class="comment-header">
+                      <h5 class="comment-author">James Sanz</h5>
+                      <span class="comment-date">3 Days ago</span>
+                    </div>
+                    <p class="comment-text">
+                      It works great for me.Now that I am registered, can I
+                      create more accounts or are we limited to one? Well,
+                      $750 a day is not a small amount of money, but I'm not
+                      sure how long it will continue to give these results.
+                      The support agent who called me told me that my account
+                      has no time limit and I hope he is right.
+                    </p>
+                    <div class="comment-actions">
+                      <button class="reply-btn">Reply</button>
+                      <button class="like-btn">👍 15</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+          <div class="share-widget">
+            <h4 class="widget-title">Share This Article</h4>
+            <div class="share-icons">
+              <a href="#" class="share-icon">f</a>
+              <a href="#" class="share-icon">𝕏</a>
+              <a href="#" class="share-icon">in</a>
+            </div>
+          </div>
+
+          <a class="related-article" href="#signupForm" style="text-decoration: auto !important">
+            <div class="article-badge">LIVE</div>
+            <img src="pexels-photo-6802042.jpeg" alt="Trading Expert" class="related-image" />
+            <p class="related-text">
+              <b>Fear not, the stock market still holds potential for
+                recovery.</b>
+            </p>
+          </a>
+
+          <a class="related-article" href="#signupForm" style="text-decoration: auto !important">
+            <img src="pexels-photo-6802049.jpeg" alt="Stock Market Analysis" class="related-image" />
+            <p class="related-text">
+              <b>The Secret Weapon for High-Profit, Low-Risk Investment
+                Strategies has been released
+              </b>
+            </p>
+          </a>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-logo">
+        <img src="logow.png" width="520" height="155" style="max-width: 200px; height: 100%" alt="dailytip.net Logo"
+          class="fusion-standard-logo" data-logo-height="77.5" data-logo-width="260" />
+      </div>
+
+      <div class="footer-content">
+        <div class="footer-sections">
+          <div class="footer-section">
+            <p class="footer-text" style="fonr-size: 10px; text-align: -webkit-center">
+              Creation Wealth Capital is a financial services firm
+              specializing in providing access to various investment markets,
+              including equities, derivatives, digital assets, and related
+              financial products. The company emphasizes investor education,
+              strategic analysis, and tools for self-directed trading.
+              Creation Wealth Capital does not offer proprietary AI trading
+              algorithms or “black box” investment systems designed to
+              generate returns with minimal user input. Any automation offered
+              is limited to user-defined settings or third-party integrations
+              and does not constitute AI-based trading or guaranteed earnings.
+              <br /><br />
+              Creation Wealth Capital does not provide personalized
+              investment, tax, or legal advice. All content, platforms, and
+              services provided by Creation Wealth Capital are intended solely
+              for individuals in jurisdictions where such offerings comply
+              with local laws and regulations. Users are solely responsible
+              for understanding and complying with their local regulatory
+              environment.
+              <br /><br />
+              Investing in securities, options, futures, or digital assets
+              carries significant risk and may not be suitable for all
+              investors. Trading in options and futures involves risk of
+              substantial losses and should only be undertaken by those who
+              fully understand the associated risks. Before trading, investors
+              should carefully review the Characteristics and Risks of
+              Standardized Options and the Futures &amp; Exchange-Traded
+              Options Risk Disclosure Statement.
+              <br /><br />
+              Creation Wealth Capital is not responsible for any losses
+              incurred as a result of trading or investing decisions made
+              based on content or tools provided by the company or its
+              affiliates.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <ul class="list-inline copyright">
+          <span style="margin-right: 5px"><a href="#signupForm">PRIVACY POLICY</a></span>
+          <span style="margin-right: 5px"><a href="#signupForm">CONTACT US</a></span>
+          <span><a href="#signupForm">TERMS OF SERVICE</a></span>
+        </ul>
+        <p class="copyright">Powered by DailyTip Inc. © 2021</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const email_pattern = /^([\p{L}\p{N}!#$%&'*+\/=?^`{|}~.-]+)(\.[\p{L}\p{N}!#$%&'*+\/=?^`{|}~.-]+)*@([\p{L}\p{N}][\p{L}\p{N}-]*)(\.[\p{L}\p{N}][\p{L}\p{N}-]*)*\.[\p{L}]{2,}$/u;
+    const name_pattern = /^[\p{L}’'`-]+(?: [\p{L}’'`-]+)*$/u;
+    const error_msg = {
+      'US': { // English (United States)
+        name_errors: 'Name fields may only contain letters!',
+        email_errors: 'Please enter a valid email address!',
+        phone_errors: ['This number does not exist', 'Invalid country code', 'Number is too short', 'Number is too long', 'This number does not exist', 'Invalid number length'],
+      },
+      'CA': { // English (United States)
+        name_errors: 'Name fields may only contain letters!',
+        email_errors: 'Please enter a valid email address!',
+        phone_errors: ['This number does not exist', 'Invalid country code', 'Number is too short', 'Number is too long', 'This number does not exist', 'Invalid number length'],
+      }
+    };
+
+    let browserLanguage = '';
+    if (!error_msg.hasOwnProperty(browserLanguage)) {
+      browserLanguage = 'US';
+    }
+
+    if (1) {
+      setupSmoothScrollToForm();
+    }
+
+    const forms = document.querySelectorAll('form');
+    forms.forEach(form => {
+      const tel_input = form.querySelector('input[name="tel_input"]');
+      if (tel_input) {
+        form.setAttribute('id', 'form_submit');
+
+        // Валидация имени
+        const first_name_input = form.querySelector('input[name="first_name"]');
+        if (first_name_input) {
+          first_name_input.addEventListener('input', function () {
+            checkNameValidation(first_name_input);
+          });
+        }
+
+        // Валидация фамилии
+        const last_name_input = form.querySelector('input[name="last_name"]');
+        if (last_name_input) {
+          last_name_input.addEventListener('input', function () {
+            checkNameValidation(last_name_input);
+          });
+        }
+
+        // Валидация почты
+        const email_input = form.querySelector('input[name="email"]');
+        if (email_input != null) {
+          email_input.addEventListener('input', function () {
+            checkEmailValidation(email_input);
+          });
+        }
+
+        // Валидация телефона
+        const iti = window.intlTelInput(tel_input, {
+          utilsScript: 'https://cdn.jsdelivr.net/npm/intl-tel-input@17.0.12/build/js/utils.js',
+          autoPlaceholder: 'aggressive',
+          separateDialCode: true,
+          onlyCountries: [
+            "US",
+            "CA",
+          ],
+          initialCountry: '',
+        });
+
+        tel_input.addEventListener('input', () => {
+          checkPhoneValidation(tel_input, iti);
+        });
+
+        form.addEventListener('submit', event => {
+          try {
+            if (
+              !checkNameValidation(first_name_input) ||
+              !checkNameValidation(last_name_input) ||
+              !checkEmailValidation(email_input) ||
+              !checkPhoneValidation(tel_input, iti)
+            ) {
+              event.preventDefault();
+              return 0;
+            }
+            disableButton(form);
+            trimAllInputs(form);
+            form.querySelector('input[name="phone"]').value = iti.getNumber().replace(/[^+\d]/g, '');
+            form.setAttribute('action', '/saveLeadInfo?');
+            form.setAttribute('method', 'post');
+
+            var attribute_func = event.target.getAttribute('openFunc');
+            if (attribute_func && attribute_func == 'true') {
+              event.preventDefault();
+              event.target.setAttribute('openFunc', 'false');
+              my_prev_func();
+            }
+          } catch (error) {
+            event.preventDefault();
+          }
+        });
+      }
+    });
+
+    function checkNameValidation(name_input) {
+      let valid_bool = false;
+
+      if (!name_pattern.test(name_input.value)) {
+        name_input.setCustomValidity(error_msg[browserLanguage]['name_errors']);
+      } else {
+        name_input.setCustomValidity('');
+        valid_bool = true;
+      }
+
+      return valid_bool;
+    };
+
+    function checkEmailValidation(email_input) {
+      if (!email_input) return true;
+
+      let valid_bool = false;
+
+      if (!email_pattern.test(email_input.value)) {
+        email_input.setCustomValidity(error_msg[browserLanguage]['email_errors']);
+      } else {
+        email_input.setCustomValidity('');
+        valid_bool = true;
+      }
+
+      return valid_bool;
+    };
+
+    function checkPhoneValidation(tel_input, iti) {
+      let valid_bool = false;
+
+      if (!new libphonenumber.parsePhoneNumber(iti.getNumber()).isValid()) {
+        tel_input.setCustomValidity(error_msg[browserLanguage]['phone_errors'][iti.getValidationError() || 0]);
+      } else {
+        tel_input.setCustomValidity('');
+        valid_bool = true;
+      }
+
+      return valid_bool;
+    };
+
+    function disableButton(form) {
+      var button = form.querySelector("[type='submit']");
+      button.disabled = true;
+    };
+
+    function trimAllInputs(form) {
+      const inputs = form.querySelectorAll('input');
+
+      inputs.forEach(input => {
+        if (input.value != null) {
+          input.value = input.value.trim();
+        }
+      });
+    };
+
+    function setupSmoothScrollToForm() {
+      $('a:not(.real_href)').removeAttr('href').click(function () {
+        $('#form_submit').get(0).scrollIntoView({
+          behavior: 'smooth',
+          block: 'center'
+        });
+      });
+      $('.scrollToForm').click(function () {
+        $('#form_submit').get(0).scrollIntoView({
+          behavior: 'smooth',
+          block: 'center'
+        });
+      });
+    }
+  </script>
+  <!-- <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015"
+    integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ=="
+    data-cf-beacon='{"version":"2024.11.0","token":"f2c70cf003de4b279c88a09dd51bedd0","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}'
+    crossorigin="anonymous"></script> -->
+</body>
+
+</html>
